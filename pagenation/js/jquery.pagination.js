@@ -68,6 +68,38 @@
 					paramStr.page = _self.options.total;
 					paramStr = linkParams(paramStr);
 				pageStr += '<li><a href="'+_link+paramStr+'">'+_self.options.total+'</a></li>';
+			}else if(_self.options.page >= 5 && _self.options.page < _self.options.total - 3){
+				// 1,...,4,5,6,7,8,...,10
+				var paramStr = $.extend({},newLinkParams);
+					paramStr.page = 1;
+					paramStr = linkParams(paramStr);
+				pageStr += '<li><a href="'+_link+paramStr+'">1</a></li>';
+				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
+				for(var i = parseInt(_self.options.page) -2 ; i<= parseInt(_self.options.page)+2;i++){
+					paramStr.page = i;
+					paramStr = linkParams(paramStr);
+					if(i == _self.options.page){
+						pageStr += '<li><a class="active" href="'+_link+paramStr+'">'+i+'</a></li>';
+					}else{
+						pageStr += '<li><a href="'+_link+paramStr+'">'+i+'</a></li>';
+					}
+				}
+				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
+				pageStr += '<li><a href="'+_link+paramStr+'">'+_self.options.total+'</a></li>';
+			}else{
+				// 1,...,6,7,8,9,10
+				var paramStr = $.extend({},newLinkParams);
+					paramStr.page = 1;
+					paramStr = linkParams(paramStr);
+				pageStr += '<li><a href="'+_link+paramStr+'">1</a></li>';
+				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
+				for(var i = parseInt(_self.options.total)-5;i<=_self.options.total;i++){
+					if(i == _self.options.page){
+						pageStr += '<li><a class="active" href="'+_link+paramStr+'">'+i+'</a></li>';
+					}else{
+						pageStr += '<li><a href="'+_link+paramStr+'">'+i+'</a></li>';
+					}
+				}
 			}
 		}
 
