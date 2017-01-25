@@ -1,6 +1,29 @@
 .pagination{
-
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 100px;
+}
+.pagination ul{
+	display: inline-block;
+	margin: 0;
+	padding: 0
+}
+.pagination li{
+	display: inline-block;
+	border: 1px solid #690;
+	line-height: 100%;
+	margin-right: 15px;
+}
+.pagination li:last-child{
+	margin-right: 0;
+}
+.pagination li a{
+	display: inline-block;
+	padding: 8px 12px;
+	text-decoration: none;
+	color: #607C27;
 }
 .pagination .active{
-	color: #0f0;
+	background-color: #690;
+	color: #ffffff;
 }

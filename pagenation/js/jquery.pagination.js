@@ -4,7 +4,19 @@
 		var _self = this,
 			_href = window.location.href,
 			_link = _href.indexOf('?') > -1 ? _href.substring(0,_href.indexOf('?')) : _href,
-			$self = $(_self);
+			$self = $(_self),
+			currentPage = 1,
+			currentParams = window.location.search;
+
+		currentParams = currentParams.split('&');
+
+		// 设置当前页面
+		for(var i = 0;i<currentParams.length;i++){
+			var params = currentParams[i].split('=');
+			if(params[0].indexOf('page') > -1){
+				currentPage = params[1];
+			}
+		}
 
 		// 默认配置
 		var defaults = {
@@ -16,7 +28,7 @@
 			linkTo : '',
 			linkParams : {}
 		};
-		_self.options = $.extend({},defaults,opt);
+		_self.options = $.extend({},defaults,opt,{page:currentPage});
 
 		// 跳转的链接的参数
 		var newLinkParams = {
@@ -28,7 +40,7 @@
 
 		var url = linkParams(newLinkParams);
 
-		var pageStr = '<ul class="pagination">';
+		var pageStr = '<div class="pagination"><ul>';
 		// 上一页
 		if(_self.options.showPrevBtn && _self.options.page > 1){
 			var paramStr = $.extend({},newLinkParams);
@@ -75,7 +87,8 @@
 					paramStr = linkParams(paramStr);
 				pageStr += '<li><a href="'+_link+paramStr+'">1</a></li>';
 				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
-				for(var i = parseInt(_self.options.page) -2 ; i<= parseInt(_self.options.page)+2;i++){
+				for(var i = (parseInt(_self.options.page) -2) ; i<= (parseInt(_self.options.page)+2);i++){
+					paramStr = $.extend({},newLinkParams);
 					paramStr.page = i;
 					paramStr = linkParams(paramStr);
 					if(i == _self.options.page){
@@ -94,6 +107,9 @@
 				pageStr += '<li><a href="'+_link+paramStr+'">1</a></li>';
 				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
 				for(var i = parseInt(_self.options.total)-5;i<=_self.options.total;i++){
+					paramStr = $.extend({},newLinkParams);
+					paramStr.page = i;
+					paramStr = linkParams(paramStr);
 					if(i == _self.options.page){
 						pageStr += '<li><a class="active" href="'+_link+paramStr+'">'+i+'</a></li>';
 					}else{
@@ -103,7 +119,6 @@
 			}
 		}
 
-
 		// 下一页
 		if(_self.options.showNextBtn && _self.options.page < _self.options.total){
 			var paramStr = $.extend({},newLinkParams);
@@ -112,9 +127,7 @@
 			pageStr += '<li><a href="'+_link+paramStr+'">下一页</a></li>';
 		}
 
-		pageStr += '</ul>';
-
-		console.log('pageStr:====',pageStr);
+		pageStr += '</ul></div>';
 
 		/**
 		 * 生成url链接函数
@@ -122,9 +135,9 @@
 		 * @return {[type]}        [description]
 		 */
 		function linkParams(params){
-			var newLinkParams = '';
+			var newLinkParams = '?';
 			$.each(params,function(key,value){
-				newLinkParams += '?'+key+'='+value+'&';
+				newLinkParams += key+'='+value+'&';
 			});
 			return newLinkParams.substring(0,newLinkParams.length - 1);
 		}
