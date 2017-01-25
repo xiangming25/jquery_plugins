@@ -1,0 +1,27 @@
+{
+  "name": "jquery_plugins",
+  "version": "1.0.0",
+  "description": "jquery_plugins develop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiangming25/jquery_plugins.git"
+  },
+  "keywords": [
+    "jquery",
+    "jquery",
+    "plugin"
+  ],
+  "author": "xiangming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiangming25/jquery_plugins/issues"
+  },
+  "homepage": "https://github.com/xiangming25/jquery_plugins#readme",
+  "dependencies": {
+    "jquery": "^1.8.3"
+  }
+}

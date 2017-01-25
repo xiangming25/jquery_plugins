@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery pagination plugin</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div id="pagination"></div>
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<script type="text/javascript" src='js/jquery.pagination.js'></script>
+
+	<script type="text/javascript">
+		$('#pagination').myPagination({
+			page:2,
+			total : 6,
+			linkTo : 'www.baidu.com',
+			linkParams : {
+				name : 'xiang',
+				role : '前端攻城狮'
+			}
+		});
+	</script>
+</body>
+</html>
