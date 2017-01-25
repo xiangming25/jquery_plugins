@@ -12,7 +12,12 @@
 	<script type="text/javascript" src='js/jquery.pagination.js'></script>
 
 	<script type="text/javascript">
-		$('#pagination').myPagination();
+		$('#pagination').myPagination({
+			linkParams : {
+				name : 'xiang',
+				role : '前端攻城狮'
+			}
+		});
 	</script>
 </body>
 </html>
