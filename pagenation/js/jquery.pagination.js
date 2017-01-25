@@ -50,6 +50,25 @@
 					pageStr += '<li><a href="'+_link+paramStr+'">'+i+'</a></li>';
 				}
 			}
+		}else{
+			// 1,2,3,4,5,6,...,10
+			if(_self.options.page < 5){
+				for(var i = 1;i<=6;i++){
+					var paramStr = $.extend({},newLinkParams);
+					paramStr.page = i;
+					paramStr = linkParams(paramStr);
+					if(i == _self.options.page){
+						pageStr += '<li><a class="active" href="'+_link+paramStr+'">'+i+'</a></li>';
+					}else{
+						pageStr += '<li><a href="'+_link+paramStr+'">'+i+'</a></li>';
+					}
+				}
+				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
+				var paramStr = $.extend({},newLinkParams);
+					paramStr.page = _self.options.total;
+					paramStr = linkParams(paramStr);
+				pageStr += '<li><a href="'+_link+paramStr+'">'+_self.options.total+'</a></li>';
+			}
 		}
 
 
