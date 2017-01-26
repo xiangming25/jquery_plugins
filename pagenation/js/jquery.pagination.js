@@ -30,6 +30,8 @@
 		};
 		_self.options = $.extend({},defaults,opt,{page:currentPage});
 
+		console.log('_self.options:   ',_self.options);
+
 		// 跳转的链接的参数
 		var newLinkParams = {
 			page : _self.options.page,
@@ -98,6 +100,9 @@
 					}
 				}
 				pageStr += '<li><a href="javascript:void(0);">...</a></li>';
+				paramStr = $.extend({},newLinkParams)
+				paramStr.page = _self.options.total;
+				paramStr = linkParams(paramStr);
 				pageStr += '<li><a href="'+_link+paramStr+'">'+_self.options.total+'</a></li>';
 			}else{
 				// 1,...,6,7,8,9,10
