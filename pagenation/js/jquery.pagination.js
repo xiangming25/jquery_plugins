@@ -30,8 +30,6 @@
 		};
 		_self.options = $.extend({},defaults,opt,{page:currentPage});
 
-		console.log('_self.options:   ',_self.options);
-
 		// 跳转的链接的参数
 		var newLinkParams = {
 			page : _self.options.page,
