@@ -2,7 +2,7 @@
 
 
 
-## 使用例子说明
+## 使用例子说明（PS： 插件依赖于上一层的lib文件夹下面的jquery.js文件）
 ```
 var date1 = $.dateFormat(new Date(),'yyyy-MM-dd HH:mm:ss');
 $('#date1').html(date1);
