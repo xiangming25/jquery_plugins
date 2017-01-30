@@ -2,7 +2,7 @@
  * jquery时间格式化
  * author xiangming
  * 2017-01-30
- * github url https://github.com/xiangming25/jquery_plugins/tree/master/pagenation
+ * github url https://github.com/xiangming25/jquery_plugins/tree/master/dataFormat
  * blog url http://www.cnblogs.com/xiangming25/
  */
 ;(function($,window,document){
