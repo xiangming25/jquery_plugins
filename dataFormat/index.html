@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dataFormat</title>
+</head>
+<body>
+
+    <p>yyyy-MM-dd HH:mm:ss :  <span id="date1"></span></p>
+    <hr>
+
+    <p>MM/dd/yyyy HH:mm:ss :  <span id="date1_1"></span></p>
+    <hr>
+
+    <p>yyyy-MM-dd hh:mm:ss :  <span id="date2"></span></p>
+    <hr>
+
+    <p>yyyy-MM-dd : <span id="date3"></span></p>
+    <hr>
+
+    <p>MM/dd/yyyy : <span id="date3_1"></span></p>
+    <hr>
+
+    <p>yyyy : <span id="date4"></span>年</p>
+    <hr>
+
+    <p>MM : <span id="date5"></span>月</p>
+    <hr>
+
+    <p>dd : <span id="date6"></span>日</p>
+    <hr>
+
+    <p>HH : <span id="date7"></span>时</p>
+    <hr>
+
+    <p>mm : <span id="date8"></span>分</p>
+    <hr>
+
+    <p>ss : <span id="date9"></span>秒</p>
+    <hr>
+
+
+    <script src="../lib/jquery.js" charset="utf-8"></script>
+    <script src="./js/dateFormat.js" charset="utf-8"></script>
+    <!-- demo例子 -->
+    <script type="text/javascript">
+        var date1 = $.dateFormat(new Date(),'yyyy-MM-dd HH:mm:ss');
+        $('#date1').html(date1);
+
+        var date1_1 = $.dateFormat(new Date(),'MM/dd/yyyy HH:mm:ss');
+        $('#date1_1').html(date1_1);
+
+        var date2 = $.dateFormat(new Date(),'yyyy-MM-dd hh:mm:ss');
+        $('#date2').html(date2);
+
+        var date3 = $.dateFormat(new Date(),'yyyy-MM-dd');
+        $('#date3').html(date3);
+
+        var date3_1 = $.dateFormat(new Date(),'MM/dd/yyyy');
+        $('#date3_1').html(date3_1);
+
+        var date4 = $.dateFormat(new Date(),'yyyy');
+        $('#date4').html(date4);
+
+        var date5 = $.dateFormat(new Date(),'MM');
+        $('#date5').html(date5);
+
+        var date6 = $.dateFormat(new Date(),'dd');
+        $('#date6').html(date6);
+
+        var date7 = $.dateFormat(new Date(),'HH');
+        $('#date7').html(date7);
+
+        var date8 = $.dateFormat(new Date(),'mm');
+        $('#date8').html(date8);
+
+        var date9 = $.dateFormat(new Date(),'ss');
+        $('#date9').html(date9);
+    </script>
+</body>
+</html>
