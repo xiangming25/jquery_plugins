@@ -1,3 +1,10 @@
+/**
+ * jquery分页插件
+ * author xiangming
+ * github url https://github.com/xiangming25/jquery_plugins/tree/master/pagenation
+ * blog url http://www.cnblogs.com/xiangming25/
+ * @type {[type]}
+ */
 ;(function($,window,document){
 
 	$.fn.myPagination = function(opt){
