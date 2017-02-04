@@ -12,6 +12,11 @@
 			var str = '1231哈哈哈哈侃侃我是卖报的小行家';
 			var newStr = $.ellipsis(str);
 			console.log("newStr:   ",newStr);
+			$('body').append(newStr+"  default<br>");
+
+			newStr = $.ellipsis(str,15);
+			console.log("newStr:   ",newStr);
+			$('body').append(newStr+"  limit 15");
 		});
 	</script>
 </body>
