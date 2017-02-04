@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ellipsis超出部分省略号</title>
+</head>
+<body>
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ellipsis.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var str = '1231哈哈哈哈侃侃我是卖报的小行家';
+			var newStr = $.ellipsis(str);
+			console.log("newStr:   ",newStr);
+		});
+	</script>
+</body>
+</html>
