@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery pagination plugin</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div id="pagination"></div>
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<script type="text/javascript" src='js/jquery.parseParam.js'></script>
+
+	<script type="text/javascript">
+		$(function(){
+			var paramObj = $.parseParam();
+			console.log('paramObj',paramObj);
+		})
+	</script>
+</body>
+</html>

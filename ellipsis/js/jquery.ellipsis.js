@@ -65,6 +65,7 @@
 			}
 		}
 		$this.html(newStr);
+		return this;
 	}
 
 })(jQuery,window,document);
