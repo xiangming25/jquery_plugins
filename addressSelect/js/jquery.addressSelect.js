@@ -5,8 +5,7 @@
  * github url https://github.com/xiangming25/jquery_plugins/tree/develop/addressSelect
  * blog url http://www.cnblogs.com/xiangming25/
  */
-;
-(function($) {
+;(function($) {
 	'use strict';
 
 	$.fn.addressSelect = function(opt) {
@@ -24,7 +23,7 @@
 
 		init();
 
-		function init(){
+		function init() {
 			$province.html(defaultProvinceStr);
 			$city.html(defaultCityStr);
 			$district.html(defaultDistrictStr);
@@ -32,10 +31,10 @@
 			getAddressJson();
 
 			// 省份选择发生改变后重新渲染市
-			$province.on('change',renderCity);
+			$province.on('change', renderCity);
 
 			// 当选择的区发生改变后重新渲染区
-			$city.on('change',renderDistrict);
+			$city.on('change', renderDistrict);
 		}
 
 		/**
@@ -53,9 +52,9 @@
 		 * 渲染省份
 		 * @return {[type]} [description]
 		 */
-		function renderProvince(){
-			addressJson.forEach(function(addressItem,index){
-				provinceStr += '<option value="'+addressItem.id+'">'+addressItem.name+'</option>';
+		function renderProvince() {
+			addressJson.forEach(function(addressItem, index) {
+				provinceStr += '<option value="' + addressItem.id + '">' + addressItem.name + '</option>';
 			});
 			$province.html(provinceStr);
 		}
@@ -65,19 +64,19 @@
 		 * 重新渲染市
 		 * @return {[type]} [description]
 		 */
-		function renderCity(){
+		function renderCity() {
 			var provinceId = $province.val(),
 				cityStr = defaultCityStr,
 				districtStr = defaultDistrictStr,
 				cityArr = [];
-			addressJson.forEach(function(addressItem,index){
-				if(addressItem.id === provinceId){
+			addressJson.forEach(function(addressItem, index) {
+				if (addressItem.id === provinceId) {
 					cityArr = addressItem.sub;
 					return;
 				}
 			});
-			cityArr.forEach(function(cityItem,index){
-				cityStr += '<option value="'+cityItem.id+'">'+cityItem.name+'</option>';
+			cityArr.forEach(function(cityItem, index) {
+				cityStr += '<option value="' + cityItem.id + '">' + cityItem.name + '</option>';
 			});
 			$city.html(cityStr);
 			$district.html(districtStr);
@@ -87,29 +86,29 @@
 		 * 重新渲染区
 		 * @return {[type]} [description]
 		 */
-		function renderDistrict(){
+		function renderDistrict() {
 			var provinceId = $province.val(),
 				cityId = $city.val(),
 				districtStr = defaultDistrictStr,
 				cityArr = [],
 				districtArr = [];
 
-			addressJson.forEach(function(addressItem,index){
-				if(addressItem.id === provinceId){
+			addressJson.forEach(function(addressItem, index) {
+				if (addressItem.id === provinceId) {
 					cityArr = addressItem.sub;
 					return;
 				}
 			});
 
-			cityArr.forEach(function(cityItem){
-				if(cityItem.id === cityId){
+			cityArr.forEach(function(cityItem) {
+				if (cityItem.id === cityId) {
 					districtArr = cityItem.sub;
 					return;
 				}
 			});
 
-			districtArr.forEach(function(districtItem){
-				districtStr += '<option value="'+districtItem.id+'">'+districtItem.name+'</option>';
+			districtArr.forEach(function(districtItem) {
+				districtStr += '<option value="' + districtItem.id + '">' + districtItem.name + '</option>';
 			});
 
 			$district.html(districtStr);
