@@ -1,4 +1,4 @@
-＃　jquery url 参数解析
+# jquery url 参数解析
 
 ## 使用方法
 ```
