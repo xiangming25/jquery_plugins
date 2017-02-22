@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 地址选择插件</title>
+</head>
+<body>
+	
+	<div class="address-select" id="addressSelect">
+		<select name="" id="province"></select>
+		<select name="" id="city"></select>
+		<select name="" id="district"></select>
+	</div>
+
+	<button type="button" id="button">获取选择的地址信息</button>
+
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.addressSelect.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#addressSelect').addressSelect();
+
+			$('#button').click(function(){
+				var province = $('#province').val(),
+					city = $('#city').val(),
+					district = $('#district').val();
+				console.log('province: ',province);
+				console.log('city: ',city);
+				console.log('district: ',district);
+
+				alert('省: '+province +'  市:  '+city+'   区:   '+district);
+			});
+		});
+	</script>
+</body>
+</html>
